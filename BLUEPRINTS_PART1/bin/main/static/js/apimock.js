@@ -1,4 +1,4 @@
-var apimock = (function (App) {
+var apimock = (function () {
 
     var mockdata = [];
 
@@ -71,16 +71,16 @@ var apimock = (function (App) {
     ]
 
     return {
-        App.getBlueprintsByAuthor= function(author, callback) {
+        getBlueprintsByAuthor: function(author, callback) {
             callback(null, mockdata[author]);
         },
 
-        App.getBlueprintsByNameAndAuthor= function(name, author, callback) {
+        getBlueprintsByNameAndAuthor: function(name, author, callback) {
             blueprint = mockdata[author].find(function(blueprint) {
                 return blueprint.name == name
             });
             callback(null, blueprint)
         }
-    }
+    };
 
-})(App || {});
+})();

@@ -14,15 +14,17 @@ var App = (function () {
 	var getauthorselect = function () {
 	  console.log(App.author_select);
 	};
-	var selectauthor = function (author) {
-	  App.author_select=author;
+	var selectauthor = function () {	
+	  App.author_select=$("#author").val();
 	};
   
   var findblueprintsbyauthor = function () {
-	  console.log(blueprints[App.author_select]);
+	  var tempo = apimock.getBlueprintsByAuthor(App.author_select,(err,res)=>console.log(res));
+	  	
   };
   return{
 	  selectauthor: selectauthor,
+	  findblueprintsbyauthor: findblueprintsbyauthor,
 	  getauthorselect: getauthorselect
   };  
   		

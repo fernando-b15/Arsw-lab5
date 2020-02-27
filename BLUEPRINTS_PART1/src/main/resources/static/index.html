@@ -27,8 +27,9 @@
 	<form method="get">
 		<legend>Blueprints</legend>
 		<label for="name">Nombre Autor:</label>
-		<input type="text" name="texto1" value="" /><br />
-		<input type="submit" value="Get blueprints">
+		<input type="text" id="author" /><br />
+		<button id="button" type="button" class="btn btn-primary" onclick="App.selectauthor();App.findblueprintsbyauthor()">Get blueprints </button>
+	
 	</form>
 	<h2>Author Blueprints:</h2>
 
